@@ -1,0 +1,74 @@
+//==============================================================
+//  GLOBAL CONFIG
+//==============================================================
+
+//  FONT STACK
+
+$font-url--google      : ;
+
+$font-family--primary  : ;
+$font-family--secondary: ;
+$font-family--tertiary : ;
+
+//  FONT WEIGHTS
+
+$font-weight--thin  : 100;
+$font-weight--light : 300;
+$font-weight--medium: 400;
+$font-weight--bold  : 700;
+$font-weight--bolder: 900;
+
+
+//  DESCRIPTIVE BASE COLORS __ http://chir.ag/projects/name-that-color/
+
+$white: #FFFBF4;
+$black: #B29256;
+$grey : #B29256;
+
+$aquamarine: #90FFC2;
+$amethyst:  #A76BCC;
+$amethystSmoke: #A99BB2;
+$drifwood:  #B29256;
+$tamarillo: #B20006;
+
+//  FUNCTIONAL COLORS
+
+$color-primary: ;
+$color-secondary: ;
+$color-teritiary: ;
+$color-accent: ;
+$color-shadow: ;
+
+//  COLOR-PALETTE MODIFIERS _ex._ color: pallete(grey, x-dark);
+
+$palettes: (
+  grey: (
+    x-light: lighten($grey, 24%)
+    light: lighten($grey, 12%)
+    base: $grey,
+    dark: darken($grey, 8%),
+    x-dark: darken($grey, 16%)
+  ),
+  black: (
+    x-light: lighten($black, 24%)
+    light: lighten($black, 12%)
+    base: $black,
+    dark: darken($black, 8%),
+    x-dark: darken($black, 16%)
+  )
+);
+
+// UI COLORS
+
+$ui-colors: (
+  default: $white,
+  success: $aquamarine,
+  warning: $tamarillo,
+  error: $tamarillo,
+);
+
+//  TEXT
+$base__font-size: 16px;
+$base__line-height: 24px;
+
+//  VARIABLES

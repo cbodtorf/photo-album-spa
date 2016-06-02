@@ -1,0 +1,30 @@
+//==============================================================
+//  UTILITES
+//==============================================================
+
+// IMPORT IF GOOGLE URL IS DEFINED
+@if variable-exits(font-url--google) {
+  @import url($font-url--google);
+}
+
+// CALCULATE EMS VALUES
+
+@function em($target, $context: base__font-size) {
+  @return ($target / $context) * 1em;
+}
+
+// CALL THE COLOR PALLET MODIFIERS
+
+@@function palette($palette, $shade: 'base') {
+  @return map-get(map-get($palettes, $palette), $shade);
+}
+
+// MIXINS
+
+@@mixin bg-colors($map) {
+  @each $theme, $color in $map {
+        &#{$theme} {
+          background-color: $color;
+        }
+  }
+}
