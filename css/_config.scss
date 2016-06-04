@@ -3,11 +3,11 @@
 //==============================================================
 
 //  FONT STACK
+// see _utilities vvvvvvvv
+// $font-url--google      : https://fonts.googleapis.com/css?family=Rajdhani;
 
-$font-url--google      : ;
-
-$font-family--primary  : ;
-$font-family--secondary: ;
+$font-family--primary  : 'Rajdhani', sans-serif;
+$font-family--secondary: 'Khand', sans-serif;
 $font-family--tertiary : ;
 
 //  FONT WEIGHTS
@@ -33,28 +33,42 @@ $tamarillo: #B20006;
 
 //  FUNCTIONAL COLORS
 
-$color-primary: ;
-$color-secondary: ;
-$color-teritiary: ;
-$color-accent: ;
-$color-shadow: ;
+$color-primary: $aquamarine;
+$color-secondary: $amethyst;
+$color-teritiary: $drifwood;
+$color-accent: $tamarillo;
+$color-shadow: $amethystSmoke;
 
-//  COLOR-PALETTE MODIFIERS _ex._ color: pallete(grey, x-dark);
+//  COLOR-PALETTE MODIFIERS _ex._ color: palette(grey, x-dark);
 
 $palettes: (
   grey: (
-    x-light: lighten($grey, 24%)
-    light: lighten($grey, 12%)
+    x-light: lighten($grey, 24%),
+    light: lighten($grey, 12%),
     base: $grey,
     dark: darken($grey, 8%),
     x-dark: darken($grey, 16%)
   ),
   black: (
-    x-light: lighten($black, 24%)
-    light: lighten($black, 12%)
+    x-light: lighten($black, 24%),
+    light: lighten($black, 12%),
     base: $black,
     dark: darken($black, 8%),
     x-dark: darken($black, 16%)
+  ),
+  aquamarine: (
+  x-light: lighten($aquamarine, 24%),
+  light: lighten($aquamarine, 12%),
+  base: $aquamarine,
+  dark: darken($aquamarine, 8%),
+  x-dark: darken($aquamarine, 16%)
+  ),
+  amethyst: (
+  x-light: lighten($amethyst, 24%),
+  light: lighten($amethyst, 12%),
+  base: $amethyst,
+  dark: darken($amethyst, 8%),
+  x-dark: darken($amethyst, 16%)
   )
 );
 

@@ -1,0 +1,46 @@
+.side-menu {
+  display: none;
+  padding: 0;
+  margin: 0;
+  border-top: 4px solid $color-secondary;
+  border-bottom: 4px solid $color-secondary;
+  height: 100%;
+  z-index: 888;
+  ul {
+    font-size: 3em;
+    list-style-type: none;
+  }
+}
+
+
+//MEDIA QUERIES
+
+@media only screen and (min-width: 700px) {
+  .side-menu {
+    width: 50px;
+    position: fixed;
+    background-color: rgba(0,0,0,0.5);
+    border-right: 4px solid palette(amethyst, base);
+    ul {
+      display: none;
+    }
+    li {
+      width: 90%;
+      padding-left: 10%;
+      color: $white;
+      text-shadow: 2px 2px 5px palette(amethyst, x-dark);
+    }
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .side-menu {
+    display: block;
+    width: 25%;
+    ul {
+      display: block;
+      margin: 50% 0 50% 0;
+      padding: 0;
+    }
+  }
+}
