@@ -41,4 +41,48 @@ $(document).ready(function() {
             $(this).find('img').removeClass("hover");
         }
     );
+    var thisArr = albums.map(function(e,i,a){
+        console.log(e.photos[i]);
+    });
+
+    //SHOW ONLY PHOTOS FROM SELECTED ALBUM
+    $('.img-wrapper').on('click', function(event) {
+        $('.main-photo').addClass('album-view');
+        event.preventDefault;
+        idxOf = $(this).data('idx');
+        var galleryAlbum = '';
+        var albumImageArr = albums[idxOf].photos.map(function(el,idx,arr){
+              return el;
+              })
+        function renderAlbumPhotos (dataArr, $target){
+        dataArr.forEach(function(el, idx, arr){
+          galleryAlbum += `<div class="img-wrapper" data-idx="${idx}">
+                             <h3>${el.title}</h3>
+                             <img src="${el.image}"></img>
+                           </div>`;
+        });
+        $target.append(galleryAlbum);
+      }
+        $('.img-wrapper').fadeOut(800);
+        renderAlbumPhotos(albumImageArr, $('.main-photo'));
+
+        // SHOW SINGLE PHOTO
+        $('.img-wrapper').on('click', function(event) {
+            $(this).addClass('photo-solo');
+            $('.main-photo').addClass('solo');
+            $(this).siblings().hide();
+
+        }) /* <----- end album photos */
+
+    }) /* <----- end album photos */
+
+
+
 });
+
+
+
+
+// ABOUT PAGE
+
+// FRIENDS PAGE
