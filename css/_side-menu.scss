@@ -2,14 +2,12 @@
   display: block;
   width: 0%;
   padding: 0;
-  margin: 0;
   border-top: 4px solid $color-secondary;
   border-bottom: 4px solid $color-secondary;
-  height: 100%;
-  z-index: 888;
+  height: 100vh;
   visibility: hidden;
-  ul {
-    font-size: 3em;
+  ol {
+    font-size: 2.3em;
     list-style-type: none;
     display: none;
   }
@@ -19,35 +17,40 @@
 //MEDIA QUERIES
 
 @media only screen and (min-width: 700px) {
-  .side-menu {
-    position: fixed;
-    background-color: rgba(0,0,0,0.5);
-    border-right: 4px solid palette(amethyst, base);
-    li {
-      color: $white;
-      text-shadow: 2px 2px 5px palette(amethyst, x-dark);
-      text-align: center;
-      transition: background-color .5s;
-    &:hover {
-      background-color: rgba(255,255,255,0.2);
-    }
-    }
-  }
+
 }
 
-@media only screen and (min-width: 1100px) {
+@media only screen and (min-width: 1000px) {
   .side-menu {
     width: 25%;
     vertical-align: middle;
     visibility: visible;
     overflow: scroll;
-    animation: slide 2s linear;
-    ul {
+    animation: slide 1.5s linear;
+    background-color: rgba(0,0,0,0.5);
+    border-right: 4px solid palette(amethyst, base);
+    margin-top: 1px;
+    position: fixed;
+    ol {
       display: block;
-      margin-top: 10%;
-      margin-bottom: 10%;
+      margin-top: 20px;
+      margin-bottom: 200px;
       padding: 0;
-      animation: slide 2s linear;
+      animation: slide 1.5s linear;
+    }
+    li {
+      color: $white;
+      text-shadow: 2px 2px 5px palette(amethyst, x-dark);
+      font-family: $font-family--secondary;
+      text-align: right;
+      margin-bottom: 60px;
+      padding-right: 20px;
+      line-height: .8em;
+      transform: scale(1,1.5);
+      transition: background-color .5s;
+    &:hover {
+      background-color: rgba(255,255,255,0.2);
+    }
     }
   }
 

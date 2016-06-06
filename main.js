@@ -1,19 +1,40 @@
 // MAIN IMAGE POPULATION FUNCTION
+// ADDED SIDE BAR ALBUM NAMES AS THIRD ARGUMENT
 // Currently pulling from data.js
+var renderAlbums = function renderAlbums (dataArr, $target, $targetTwo) {
+  var galleryAlbum = '';
+  var albumList = '';
+  dataArr.forEach(function(el, idx, arr){
+    galleryAlbum += `<div class="img-wrapper" data-idx="${idx}">
+                       <h3>${el.name}</h3>
+                       <img src="${el.photos[0].image}"></img>
+                       <span>${el.description}</span>
+                     </div>`;
+    albumList += `<li data-idx="${idx}">${el.name}</li>`;
+  });
+  $target.append(galleryAlbum);
+  $targetTwo.append(albumList);
+}
+
+// Home
+$('.home').on('click', function(event) {
+    $('.trio').remove();
+    $('.img-wrapper').removeClass('photo-solo');
+    $('.main-photo').removeClass('solo');
+    $('.img-wrapper').fadeIn();
+}) /* <----- home */
 
 $(document).ready(function() {
-    function renderAlbums (dataArr, $target) {
-      var galleryAlbum = '';
-      dataArr.forEach(function(el, idx, arr){
-        galleryAlbum += `<div class="img-wrapper" data-idx="${idx}">
-                           <h3>${el.name}</h3>
-                           <img src="${el.photos[0].image}"></img>
-                           <span>${el.description}</span>
-                         </div>`;
-      });
-      $target.append(galleryAlbum);
-    }
-    renderAlbums(albums, $('.main-photo'));
+    renderAlbums(albums, $('.main-photo'), $('.side-album'));
+
+    // SHOW SINGLE PHOTO
+    $('img').on('click', function(event) {
+        console.log("hello");
+        $(this).addClass('photo-solo');
+        $('.main-photo').addClass('solo');
+        $(this).siblings().hide();
+
+    }) /* <----- end single photo */
 
     //ALBUM HOVER VARIABLES
     var idxOf = 0;
@@ -46,9 +67,12 @@ $(document).ready(function() {
     });
 
     //SHOW ONLY PHOTOS FROM SELECTED ALBUM
-    $('.img-wrapper').on('click', function(event) {
+    $('.img-wrapper, .side-album li, .photo-solo').on('click', function(event) {
         $('.main-photo').addClass('album-view');
-        event.preventDefault;
+        $('.trio').remove();
+        $('.img-wrapper').removeClass('photo-solo');
+        $('.main-photo').removeClass('solo');
+        event.preventDefault();
         idxOf = $(this).data('idx');
         var galleryAlbum = '';
         var albumImageArr = albums[idxOf].photos.map(function(el,idx,arr){
@@ -56,7 +80,7 @@ $(document).ready(function() {
               })
         function renderAlbumPhotos (dataArr, $target){
         dataArr.forEach(function(el, idx, arr){
-          galleryAlbum += `<div class="img-wrapper" data-idx="${idx}">
+          galleryAlbum += `<div class="img-wrapper trio" data-idx="${idx}">
                              <h3>${el.title}</h3>
                              <img src="${el.image}"></img>
                            </div>`;
@@ -66,20 +90,11 @@ $(document).ready(function() {
         $('.img-wrapper').fadeOut(800);
         renderAlbumPhotos(albumImageArr, $('.main-photo'));
 
-        // SHOW SINGLE PHOTO
-        $('.img-wrapper').on('click', function(event) {
-            $(this).addClass('photo-solo');
-            $('.main-photo').addClass('solo');
-            $(this).siblings().hide();
-
-        }) /* <----- end album photos */
 
     }) /* <----- end album photos */
 
 
-
 });
-
 
 
 

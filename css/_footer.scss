@@ -1,0 +1,13 @@
+footer {
+  height: 50px;
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  background-color: $color-primary;
+  z-index: 9999;
+  border-top: 10px solid palette(aquamarine, dark);
+  box-shadow: 0 0 10px black;
+  color: $color-secondary;
+  font-size: 2.4em;
+  text-align: center;
+}
