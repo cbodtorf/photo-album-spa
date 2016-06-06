@@ -13,7 +13,10 @@ header {
   header .homie {
     font-family: "Rajdhani", sans-serif;
     font-size: 2em;
-    margin-left: 50px; }
+    margin-left: 50px;
+    cursor: pointer; }
+    header .homie:hover {
+      font-weight: 700; }
   header img {
     width: 50px;
     background-color: rgba(0, 0, 0, 0.3);
