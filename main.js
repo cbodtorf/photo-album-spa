@@ -27,14 +27,7 @@ $('.home').on('click', function(event) {
 $(document).ready(function() {
     renderAlbums(albums, $('.main-photo'), $('.side-album'));
 
-    // SHOW SINGLE PHOTO
-    $('img').on('click', function(event) {
-        console.log("hello");
-        $(this).addClass('photo-solo');
-        $('.main-photo').addClass('solo');
-        $(this).siblings().hide();
 
-    }) /* <----- end single photo */
 
     //ALBUM HOVER VARIABLES
     var idxOf = 0;
@@ -89,6 +82,15 @@ $(document).ready(function() {
       }
         $('.img-wrapper').fadeOut(800);
         renderAlbumPhotos(albumImageArr, $('.main-photo'));
+
+        // SHOW SINGLE PHOTO
+        $('.trio').on('click', function(event) {
+            console.log("hello");
+            $(this).addClass('photo-solo');
+            $('.main-photo').addClass('solo');
+            $(this).siblings().hide();
+
+        }) /* <----- end single photo */
 
 
     }) /* <----- end album photos */
