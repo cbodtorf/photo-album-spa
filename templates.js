@@ -2,7 +2,7 @@
 
 var galleryTemplates = {
   mainAlbum:
-    `<div class="img-wrapper" data-idx="<%= idx %>">
+    `<div class="img-wrapper gall" data-idx="<%= idx %>">
        <h3> <%= name %> </h3>
        <img src="<%= photos[0].image %>"></img>
        <span> <%= description %> </span>
